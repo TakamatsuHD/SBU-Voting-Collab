@@ -17,7 +17,7 @@
     "server": "node-env-run server --exec nodemon | pino-colada",
     "dev": "run-p server start",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
