@@ -26,7 +26,7 @@ export default class AbsenteeScreen extends Component {
             "Louisiana": "https://voterportal.sos.la.gov/Home/VoterLogin",
             "Maine": "https://www1.maine.gov/portal/government/edemocracy/voter_lookup.php",
             "Maryland": "https://voterservices.elections.maryland.gov/VoterSearch",
-            "Massachusetts": "https://www.sec.state.ma.us/voterregistrationsearch/myvoterregstatus.aspx",
+            "Massachusetts": "https://form.jotform.com/201176398415155",
             "Michigan": "https://mvic.sos.state.mi.us/",
             "Minnesota": "https://mnvotes.sos.state.mn.us/VoterStatus.aspx",
             "Mississippi": "https://www.msegov.com/sos/voter_registration/AmIRegistered",
