@@ -37,7 +37,7 @@ export default class AbsenteeScreen extends Component {
             "NewHampshire": "https://app.sos.nh.gov/Public/PartyInfo.aspx",
             "NewJersey": "https://voter.svrs.nj.gov/registration-check",
             "NewMexico": "https://voterportal.servis.sos.state.nm.us/wheretovote.aspx?AspxAutoDetectCookieSupport=1",
-            "NewYork": "https://voterlookup.elections.ny.gov/",
+            "NewYork": "https://form.jotform.com/201176971601149",
             "NorthCarolina": "https://vt.ncsbe.gov/RegLkup/",
             "NorthDakota": "https://vip.sos.nd.gov/WhereToVoteID.aspx?tab=VoterLookup&ptlPKID=7&ptlhPKID=51",
             "Ohio": "https://voterlookup.ohiosos.gov/voterlookup.aspx",
