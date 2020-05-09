@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+
+/* This component uses an iframe provided by simpletexting.com 
+and allows the user to interface with the creators on the simpletexting
+website*/ 
 export default class ChatScreen extends Component {
   render() {
     return (

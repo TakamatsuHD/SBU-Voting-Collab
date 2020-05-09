@@ -116,3 +116,19 @@ code {
 .smallText{
   font-size: 69.42%;
 }
+
+.onCampusVotingBtn{
+  color: black;
+  position: absolute;
+  top: 85%;
+  right: 36%;
+  font-size: 69.42%;
+}
+
+.getHelp {
+  color: black;
+  position: absolute;
+  top: 91%;
+  right: 38%;
+  font-size: 69.42%;
+}

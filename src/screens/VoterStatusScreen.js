@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import {Select, Button} from 'react-materialize'
 export default class VoterStatusScreen extends Component {
 
+
+/* Function that triggers once a state is selected. This function contains an associative dictionary
+ which is accessed and used to associate links to names. Make sure that the option value put in the 
+ selector matches the key in the dictionary. Also make sure that the files are relatable by name. */
     changeStateImage(){
         const images = require.context('../States', true);
         const websiteLinks = 
         {"Alabama" : "https://myinfo.alabamavotes.gov/VoterView/RegistrantSearch.do",
             "Alaska": "https://myvoterinformation.alaska.gov/",
+            "AmericanSamoa" : "https://www.fvap.gov/american-samoa",
             "Arizona": "https://my.arizona.vote/WhereToVote.aspx?s=individual",
             "Arkansas": "https://www.voterview.ar-nova.org/voterview",
             "California": "https://voterstatus.sos.ca.gov/",
@@ -16,6 +21,7 @@ export default class VoterStatusScreen extends Component {
             "Delaware": "https://ivote.de.gov/voterview",
             "Florida": "https://registration.elections.myflorida.com/CheckVoterStatus",
             "Georgia": "https://www.mvp.sos.ga.gov/MVP/mvp.do",
+            "Guam" : "https://www.fvap.gov/guam",
             "Hawaii": "https://olvr.hawaii.gov/",
             "Idaho": "https://apps.idahovotes.gov/YourPollingPlace/AmIRegistered.aspx",
             "Illinois": "https://ova.elections.il.gov/RegistrationLookup.aspx",
@@ -40,15 +46,18 @@ export default class VoterStatusScreen extends Component {
             "NewYork": "https://voterlookup.elections.ny.gov/",
             "NorthCarolina": "https://vt.ncsbe.gov/RegLkup/",
             "NorthDakota": "https://vip.sos.nd.gov/WhereToVoteID.aspx?tab=VoterLookup&ptlPKID=7&ptlhPKID=51",
+            "NorthernMarianaIslands" : "https://justfacts.votesmart.org/elections/voter-registration/MP", 
             "Ohio": "https://voterlookup.ohiosos.gov/voterlookup.aspx",
             "Oklahoma": "https://okvoterportal.okelections.us/",
             "Oregon": "https://secure.sos.state.or.us/orestar/vr/showVoterSearch.do?lang=eng&source=SOS",
             "Pennsylvania": "https://www.pavoterservices.pa.gov/pages/voterregistrationstatus.aspx",
+            "PuertoRico" : "https://www.progresspuertorico.org/verify",
             "RhodeIsland": "https://vote.sos.ri.gov/Home/UpdateVoterRecord?ActiveFlag=0",
             "SouthCarolina":  "https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx?PageMode=VoterInfo",
             "SouthDakota": "https://vip.sdsos.gov/VIPLogin.aspx",
             "Tennessee": "https://tnmap.tn.gov/voterlookup/",
             "Texas": "https://teamrv-mvp.sos.texas.gov/MVP/mvp.do",
+            "USVirginIslands" : "https://www.vivote.gov/voters/lookup",
             "Utah": "https://votesearch.utah.gov/voter-search/search/search-by-address/how-and-where-can-i-vote",
             "Vermont": "https://mvp.vermont.gov/",
             "Virginia" : "https://vote.elections.virginia.gov/VoterInformation",
@@ -67,6 +76,7 @@ export default class VoterStatusScreen extends Component {
     render() {
         return (
             <div id = "voterStatusScreen">
+            {/* The primary selector for the page. Ensure the options associate with the dictionary keys.*/}
             <Select
                 id="stateSelector"
                 multiple={false}
@@ -76,10 +86,10 @@ export default class VoterStatusScreen extends Component {
                     dropdownOptions: {
                       alignment: 'left',
                       autoTrigger: true,
-                      closeOnClick: true,
-                      constrainWidth: true,
-                      coverTrigger: true,
-                      hover: false,
+                      closeOnClick: true, 
+                      constrainWidth: true, 
+                      coverTrigger: true, 
+                      hover: false, 
                       inDuration: 150,
                       onCloseEnd: null,
                       onCloseStart: null,
@@ -101,6 +111,9 @@ export default class VoterStatusScreen extends Component {
                 </option>
                 <option value="Alaska">
                     Alaska
+                </option>
+                <option value="AmericanSamoa">
+                    American Samoa
                 </option>
                 <option value="Arkansas">
                     Arkansas
@@ -125,6 +138,9 @@ export default class VoterStatusScreen extends Component {
                 </option>
                 <option value="Georgia">
                     Georgia
+                </option>
+                <option value="Guam">
+                    Guam
                 </option>
                 <option value="Hawaii">
                     Hawaii
@@ -201,6 +217,9 @@ export default class VoterStatusScreen extends Component {
                 <option value="NorthDakota">
                     North Dakota
                 </option>
+                <option value="NorthernMarianaIslands">
+                    Northern Mariana Islands
+                </option>
                 <option value="Ohio">
                     Ohio
                 </option>
@@ -212,6 +231,9 @@ export default class VoterStatusScreen extends Component {
                 </option>
                 <option value="Pennsylvania">
                     Pennsylvania
+                </option>
+                <option value="PuertoRico">
+                    Puerto Rico
                 </option>
                 <option value="RhodeIsland">
                     Rhode Island
@@ -227,6 +249,9 @@ export default class VoterStatusScreen extends Component {
                 </option>
                 <option value="Texas">
                     Texas
+                </option>
+                <option value="USVirginIslands">
+                    U.S. Virgin Islands
                 </option>
                 <option value="Utah">
                     Utah
@@ -250,8 +275,12 @@ export default class VoterStatusScreen extends Component {
                     Wyoming
                 </option>
                 </Select>
+             {/* The element which an image is loaded into once a state is selected.*/}
                 <div><img id ="stateImage"></img></div>
+             {/* Button to redirect to the state link*/}
                 <div><a id = "goToStateWebsite" target ="_blank"><Button className = "submitButton">Check your Voter Status!</Button></a></div>
+             {/* Redirect to the chat page. */}
+                <div className = "getHelp"><p>Click <a onClick = {(e)=>this.props.changeScreen('chat')}>here</a> if you need help</p></div>
             </div>
         )
     }

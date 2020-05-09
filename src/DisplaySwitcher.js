@@ -6,6 +6,14 @@ import ChatScreen from './screens/ChatScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import OnCampus from './screens/OnCampus'
 import {Button, Icon} from 'react-materialize';
+
+
+
+
+
+/* This component renders the various different screens 
+within the same area. This provides the illusion of changing 
+screens while staying on a single webpage.*/
 export default class DisplaySwitcher extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +31,7 @@ export default class DisplaySwitcher extends Component {
             return(
                 <div>
                     <Button className = "homeButton" onClick = {(e)=>this.changeScreen("menu")}><Icon>arrow_back_ios</Icon></Button>
-                    <VoterStatusScreen/>
+                    <VoterStatusScreen changeScreen = {this.changeScreen}/>
                 </div>
             )
         }
@@ -31,7 +39,7 @@ export default class DisplaySwitcher extends Component {
             return(
                 <div>
                     <Button className = "homeButton" onClick = {(e)=>this.changeScreen("menu")}><Icon>arrow_back_ios</Icon></Button>
-                    <RegisterScreen/>
+                    <RegisterScreen changeScreen = {this.changeScreen}/>
                 </div>
             )
         }
@@ -39,7 +47,7 @@ export default class DisplaySwitcher extends Component {
             return(
                 <div>
                     <Button className = "homeButton" onClick = {(e)=>this.changeScreen("menu")}><Icon>arrow_back_ios</Icon></Button>
-                    <AbsenteeScreen/>
+                    <AbsenteeScreen changeScreen = {this.changeScreen}/>
                 </div>
             )
         }
@@ -47,7 +55,7 @@ export default class DisplaySwitcher extends Component {
             return(
                 <div>
                     <Button className = "homeButton" onClick = {(e)=>this.changeScreen("menu")}><Icon>arrow_back_ios</Icon></Button>
-                    <AbsenteeScreen/>
+                    <AbsenteeScreen changeScreen = {this.changeScreen}/>
                 </div>
             )
         }
@@ -55,7 +63,7 @@ export default class DisplaySwitcher extends Component {
             return(
                 <div>
                     <Button className = "homeButton" onClick = {(e)=>this.changeScreen("menu")}><Icon>arrow_back_ios</Icon></Button>
-                    <ChatScreen/>
+                    <ChatScreen changeScreen = {this.changeScreen}/>
                 </div>
             )
         }else{
